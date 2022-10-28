@@ -10,20 +10,24 @@ const Navbar = (props) => {
     {
         props.yearChange(event.target.value);
     }
+    const onFilterChange=()=>
+    {
+        props.filterChange(false);
+    }
     return (
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-dark asset-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Prizegrabber</a>
+                <a class="navbar-brand text-dark fw-bold" href="#">Prizegrabber</a>
                 {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> */}
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link home active text-dark" aria-current="page" href="#" onClick={onFilterChange}>Home</a>
                         </li>
-                        <li class="nav-item">
-                            <select class="form-select" aria-label="Default select example" onChange={onCategoryChange}>
+                        <li class="nav-item ms-3">
+                            <select class="form-select text-dark" aria-label="Default select example" onChange={onCategoryChange}>
                                 <option selected>Category</option>
                                 <option value="chemistry">chemistry</option>
                                 <option value="medicine">medicine</option>
@@ -32,8 +36,8 @@ const Navbar = (props) => {
                                 <option value="literature">literature</option>
                                 <option value="peace">peace</option>
                             </select></li>
-                        <li class="nav-item">
-                            <select class="form-select" aria-label="Default select example" onChange={onYearChange}>
+                        <li class="nav-item ms-3 text-light">
+                            <select class="form-select text-dark" aria-label="Default select example" onChange={onYearChange}>
                                 <option selected>Year</option>
                                 <option value="2018-2022">2018-2022</option>
                                 <option value="2014-2018">2014-2018</option>
@@ -46,8 +50,9 @@ const Navbar = (props) => {
                                 <option value="1986-1990">1986-1990</option>
                                 <option value="1982-1986">1982-1986</option>
                                 <option value="1978-1982">1978-1982</option>
-                                <option value="1968-1972">1968-1972</option>
-                                <option value="1964-1968">1964-1968</option>
+                                <option value="1978-1982">1974-1978</option>
+                                <option value="1968-1972">1970-1974</option>
+                                <option value="1964-1968">1966-1970</option>
                                 <option value="1960-1964">1960-1964</option>
                                 <option value="1956-1960">1956-1960</option>
                                 <option value="1952-1956">1952-1956</option>
