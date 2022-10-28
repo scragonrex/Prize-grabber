@@ -5,8 +5,7 @@ const DisplayEl = (props) => {
     const people = props.laureates;
     console.log("people" + people.length);
     return (
-        <div className="container">
-            
+        <div className="container">      
             {
                 people.map((ele, index) => {
                     return (
@@ -20,7 +19,6 @@ const DisplayEl = (props) => {
                 })
             }
         </div>
-    )
-        
+    )    
 }
 export default DisplayEl

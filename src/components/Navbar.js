@@ -17,14 +17,14 @@ const Navbar = (props) => {
     return (
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark asset-3">
             <div class="container-fluid">
-                <a class="navbar-brand text-dark fw-bold" href="#">Prizegrabber</a>
+                <span class="navbar-brand text-dark fw-bold">Prizegrabber</span>
                 {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> */}
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link home active text-dark" aria-current="page" href="#" onClick={onFilterChange}>Home</a>
+                            <span class="nav-link home active text-dark" aria-current="page" onClick={onFilterChange}>Home</span>
                         </li>
                         <li class="nav-item ms-3">
                             <select class="form-select text-dark" aria-label="Default select example" onChange={onCategoryChange}>
@@ -50,25 +50,25 @@ const Navbar = (props) => {
                                 <option value="1986-1990">1986-1990</option>
                                 <option value="1982-1986">1982-1986</option>
                                 <option value="1978-1982">1978-1982</option>
-                                <option value="1978-1982">1974-1978</option>
-                                <option value="1968-1972">1970-1974</option>
-                                <option value="1964-1968">1966-1970</option>
-                                <option value="1960-1964">1960-1964</option>
-                                <option value="1956-1960">1956-1960</option>
-                                <option value="1952-1956">1952-1956</option>
-                                <option value="1948-1952">1948-1952</option>
-                                <option value="1944-1948">1944-1948</option>
-                                <option value="1940-1944">1940-1944</option>
-                                <option value="1936-1940">1936-1940</option>
-                                <option value="1932-1936">1932-1936</option>
-                                <option value="1928-1932">1928-1932</option>
-                                <option value="1924-1928">1924-1928</option>
-                                <option value="1920-1924">1920-1924</option>
-                                <option value="1916-1920">1916-1920</option>
-                                <option value="1912-1916">1912-1916</option>
-                                <option value="1908-1912">1908-1912</option>
-                                <option value="1904-1908">1904-1908</option>
-                                <option value="1900-1904">1900-1904</option>
+                                <option value="1974-1978">1974-1978</option>
+                                <option value="1970-1974">1970-1974</option>
+                                <option value="1966-1970">1966-1970</option>
+                                <option value="1962-1966">1962-1966</option>
+                                <option value="1958-1962">1958-1962</option>
+                                <option value="1954-1958">1954-1958</option>
+                                <option value="1950-1954">1950-1954</option>
+                                <option value="1946-1950">1946-1950</option>
+                                <option value="1942-1946">1942-1946</option>
+                                <option value="1938-1942">1938-1942</option>
+                                <option value="1934-1938">1934-1938</option>
+                                <option value="1930-1934">1930-1934</option>
+                                <option value="1926-1930">1926-1930</option>
+                                <option value="1922-1926">1922-1926</option>
+                                <option value="1918-1922">1918-1922</option>
+                                <option value="1914-1918">1914-1918</option>
+                                <option value="1910-1914">1910-1914</option>
+                                <option value="1906-1910">1906-1910</option>
+                                <option value="1900-1906">1900-1906</option>
                                 
                             </select></li>
                     </ul>
