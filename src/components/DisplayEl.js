@@ -3,7 +3,6 @@ const DisplayEl = (props) => {
     const category = props.category;
     const year = props.year;
     const people = props.laureates;
-    console.log("people" + people.length);
     return (
         <div className="container">      
             {

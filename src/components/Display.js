@@ -6,8 +6,9 @@ const Display = (props) => {
     const [prize, setPrize] = useState([]);
     let pageSize = 5;
     const [page, setPage] = useState(1);
+    const [totalSize, settotalSize] = useState(0)
     let parseData, prizeData = [];
-
+    let value;
     const fetchPrize = async () => {               //fetching the data from the user
         let url = 'https://api.nobelprize.org/v1/prize.json';
         let data = await fetch(url);
@@ -26,9 +27,11 @@ const Display = (props) => {
                 })
             }
         }
+        settotalSize(prizeData.length);
+        console.log("totalsize "+totalSize);
+        console.log("pageSize*page" +pageSize*page);
+        console.log("totalSize"+totalSize);
         setPrize(prizeData.slice((page - 1) * pageSize, pageSize * page));
-        console.log("prizelength " + prizeData.length + "pageSize " + pageSize)
-        console.log(prizeData.length / pageSize);
     }
 
 
@@ -46,6 +49,15 @@ const Display = (props) => {
         setPage(page - 1);
     }
 
+    const isAvailable=()=>
+    {
+        if(page*pageSize>=totalSize)
+        value=true;
+        else
+        value=false;
+        console.log(value);
+        return value;
+    }
     return (
         <div className="container my-3">
             < div className="container asset-2">
@@ -70,7 +82,7 @@ const Display = (props) => {
             <div className="button1 container">
                 <button className="btn1" onClick={previousContent} disabled={page <= 1 ? true : false}>&laquo; Previous</button>
                 <button className="btn1">Page no-{page}</button>
-                <button className="btn1" onClick={nextContent} disabled={false}>Next &raquo;</button>
+                <button className="btn1" onClick={nextContent} disabled={page*pageSize>=totalSize}>Next &raquo;</button>
             </div>
         </div>
     )
