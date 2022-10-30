@@ -8,7 +8,6 @@ const Display = (props) => {
     const [page, setPage] = useState(1);
     const [totalSize, settotalSize] = useState(0)
     let parseData, prizeData = [];
-    let value;
     const fetchPrize = async () => {               //fetching the data from the user
         let url = 'https://api.nobelprize.org/v1/prize.json';
         let data = await fetch(url);
@@ -36,7 +35,8 @@ const Display = (props) => {
 
 
     useEffect(() => {
-        fetchPrize()
+        fetchPrize(); 
+        //eslint-disable-next-line
     }, [page, props.category, props.startyear, props.endyear, props.filterState]);
 
 
@@ -49,15 +49,6 @@ const Display = (props) => {
         setPage(page - 1);
     }
 
-    const isAvailable=()=>
-    {
-        if(page*pageSize>=totalSize)
-        value=true;
-        else
-        value=false;
-        console.log(value);
-        return value;
-    }
     return (
         <div className="container my-3">
             < div className="container asset-2">
