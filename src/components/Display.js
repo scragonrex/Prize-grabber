@@ -8,10 +8,13 @@ const Display = (props) => {
     const [page, setPage] = useState(1);
     const [totalSize, settotalSize] = useState(0)
     let parseData, prizeData = [];
+
     const fetchPrize = async () => {               //fetching the data from the user
         let url = 'https://api.nobelprize.org/v1/prize.json';
         let data = await fetch(url);
+        props.changeProgress(10);
         parseData = await data.json();
+        props.changeProgress(50);
         prizeData = parseData.prizes;
         if (props.filterState === true) {
             if (props.category) {
@@ -31,6 +34,7 @@ const Display = (props) => {
         console.log("pageSize*page" +pageSize*page);
         console.log("totalSize"+totalSize);
         setPrize(prizeData.slice((page - 1) * pageSize, pageSize * page));
+        props.changeProgress(100);
     }
 
 
@@ -78,6 +82,7 @@ const Display = (props) => {
         </div>
     )
 }
+
 Display.propTypes = {
     category: PropTypes.string,
     startyear: PropTypes.number,

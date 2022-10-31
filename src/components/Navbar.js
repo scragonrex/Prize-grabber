@@ -1,6 +1,7 @@
-import React from "react"
-
+import React, {useState} from "react"
 const Navbar = (props) => {
+    const [year, setyear] = useState('year')
+    
     const onCategoryChange=(event)=>
     {
         props.categoryChange(event.target.value);
@@ -13,22 +14,20 @@ const Navbar = (props) => {
     const onFilterChange=()=>
     {
         props.filterChange(false);
+        setyear('year');
     }
     return (
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark asset-3">
-            <div class="container-fluid">
-                <span class="navbar-brand text-dark fw-bold">Prizegrabber</span>
-                {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> */}
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <span class="nav-link home active text-dark" aria-current="page" onClick={onFilterChange}>Home</span>
+            <div className="container-fluid">
+                <span className="navbar-brand text-dark fw-bold">Prizegrabber</span>
+                <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <span className="nav-link home active text-dark" aria-current="page" onClick={onFilterChange}>Home</span>
                         </li>
-                        <li class="nav-item ms-3">
-                            <select class="form-select text-dark" aria-label="Default select example" onChange={onCategoryChange}>
-                                <option selected>Category</option>
+                        <li className="nav-item ms-3">
+                            <select className="form-select text-dark" aria-label="Default select example" onChange={onCategoryChange} defaultValue={'Category'}>
+                                <option value={'category'} disabled>{'Category'}</option>
                                 <option value="chemistry">chemistry</option>
                                 <option value="medicine">medicine</option>
                                 <option value="physics">physics</option>
@@ -36,9 +35,9 @@ const Navbar = (props) => {
                                 <option value="literature">literature</option>
                                 <option value="peace">peace</option>
                             </select></li>
-                        <li class="nav-item ms-3 text-light">
-                            <select class="form-select text-dark" aria-label="Default select example" onChange={onYearChange}>
-                                <option selected>Year</option>
+                        <li className="nav-item ms-3 text-light">
+                            <select className="form-select text-dark" aria-label="Default select example" onChange={onYearChange} defaultValue={year}>
+                                <option value={year} disabled>{year}</option>
                                 <option value="2018-2022">2018-2022</option>
                                 <option value="2014-2018">2014-2018</option>
                                 <option value="2010-2014">2010-2014</option>
