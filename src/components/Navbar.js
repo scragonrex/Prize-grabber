@@ -1,7 +1,5 @@
 import React, {useState} from "react"
 const Navbar = (props) => {
-    const [year, setyear] = useState('year')
-    
     const onCategoryChange=(event)=>
     {
         props.categoryChange(event.target.value);
@@ -14,7 +12,6 @@ const Navbar = (props) => {
     const onFilterChange=()=>
     {
         props.filterChange(false);
-        setyear('year');
     }
     return (
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark asset-3">
@@ -27,7 +24,7 @@ const Navbar = (props) => {
                         </li>
                         <li className="nav-item ms-3">
                             <select className="form-select text-dark" aria-label="Default select example" onChange={onCategoryChange} defaultValue={'Category'}>
-                                <option value={'category'} disabled>{'Category'}</option>
+                                <option value={'category'}>category</option>
                                 <option value="chemistry">chemistry</option>
                                 <option value="medicine">medicine</option>
                                 <option value="physics">physics</option>
@@ -36,8 +33,8 @@ const Navbar = (props) => {
                                 <option value="peace">peace</option>
                             </select></li>
                         <li className="nav-item ms-3 text-light">
-                            <select className="form-select text-dark" aria-label="Default select example" onChange={onYearChange} defaultValue={year}>
-                                <option value={year} disabled>{year}</option>
+                            <select className="form-select text-dark" aria-label="Default select example" onChange={onYearChange} defaultValue={'year'}>
+                                <option value={'year'}>year</option>
                                 <option value="2018-2022">2018-2022</option>
                                 <option value="2014-2018">2014-2018</option>
                                 <option value="2010-2014">2010-2014</option>
